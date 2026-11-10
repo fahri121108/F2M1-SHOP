@@ -34,7 +34,7 @@ let currentUserTab="orders", currentAdminTab="orders";
 const rupiah=n=>new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(Number(n)||0);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",3500)}
-function ready(){return db && !SUPABASE_URL.startsWith("ISI_") && !SUPABASE_ANON_KEY.startsWith("ISI_")}
+function ready(){return  !SUPABASE_URL.startsWith("ISI_") && !SUPABASE_ANON_KEY.startsWith("ISI_")}
 function go(id){
  if((id==="dashboard"||id==="admin")&&!session){toast("Silakan login terlebih dahulu.");return go("login")}
  if(id==="admin"&&profile?.role!=="admin"){toast("Halaman khusus admin.");return go("dashboard")}
