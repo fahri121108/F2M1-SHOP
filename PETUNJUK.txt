@@ -1,0 +1,27 @@
+FAHRI STORE - PETUNJUK SINGKAT
+
+Isi folder:
+- index.html: seluruh frontend website.
+- qris.jpg: letakkan gambar QRIS milikmu di folder yang sama.
+- supabase_setup.sql: struktur database dan aturan keamanan.
+
+LANGKAH:
+1. Buat project di Supabase.
+2. Buka SQL Editor, jalankan seluruh isi supabase_setup.sql.
+3. Buka Project Settings > API, salin Project URL dan anon/public key.
+4. Edit index.html, ganti ISI_SUPABASE_PROJECT_URL dan ISI_SUPABASE_ANON_KEY.
+   Jangan pernah gunakan service_role key di browser.
+5. Upload index.html dan qris.jpg ke hosting statis yang mendukung HTTPS.
+6. Daftar akun admin melalui website. Di Supabase > Authentication > Users,
+   salin UUID akun tersebut, lalu jalankan:
+   update public.profiles set role='admin' where id='UUID_ADMIN';
+7. Login kembali. Dashboard admin akan muncul.
+
+CATATAN:
+- Harga awal produk diset Rp0 agar admin wajib mengatur harga sebelum menerima order.
+- Atur harga per 100 followers dari Dashboard Admin > Pengaturan Produk.
+- Pembayaran QRIS diverifikasi manual oleh admin.
+- Status order dan klaim disimpan di database.
+- Notifikasi tampil di dashboard website; push notification/WhatsApp/Telegram belum diintegrasikan.
+- Fitur ini mengelola order dan klaim, bukan otomatis mengirim followers.
+- Pastikan layanan dan klaim garansi mematuhi aturan Roblox dan jangan menjanjikan hasil yang tidak dapat dipastikan.
