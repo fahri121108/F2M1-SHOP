@@ -76,7 +76,7 @@
 const SUPABASE_URL = "https://ydpfcyrkrxohymvutiei.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_OXXJrr01SKXNsc3hvyyhdw_Ey1qVuL8";
 /* QRIS: isi URL gambar QRIS. DANA: isi nomor DANA tujuan. */
-const PAYMENT_CONFIG = { qrisImage:"qris.jpg", danaNumber:"089531746761", storeName:"F2M1 SHOP ID" };
+const PAYMENT_CONFIG = { qrisImage:"qris.jpg", danaNumber:"089531746761", storeName:"FAHRI STORE" };
 const supabaseReady = SUPABASE_URL.includes("supabase.co") && !SUPABASE_URL.includes("YOUR-PROJECT") && SUPABASE_ANON_KEY.length > 30;
 const sb = supabaseReady ? window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY) : null;
 let session=null, me=null, profile=null, products=[], isAdmin=false, activePayment=null;
